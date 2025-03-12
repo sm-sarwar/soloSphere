@@ -30,7 +30,7 @@ const Navbar = () => {
                   className="btn btn-ghost btn-circle avatar "
                 >
                   <div className="w-10 rounded-full">
-                    <img alt={user?.displayName} src={user?.photoURL} />
+                    <img referrerPolicy="no-referrer" alt={user?.displayName} src={user?.photoURL} />
                   </div>
                   
                 </div>
@@ -43,10 +43,13 @@ const Navbar = () => {
                     <Link to="/addJobs">Add Jobs</Link>
                   </li>
                   <li>
-                    <a className="justify-between">Profile</a>
+                    <Link to="/my-posted-jobs">My Posted Jobs</Link>
                   </li>
                   <li>
-                    <a>Settings</a>
+                    <Link to='/my-bids'>My bids</Link>
+                  </li>
+                  <li>
+                    <Link to='/bid-requests'>Bid Request</Link>
                   </li>
                   <li>
                     <a onClick={signOutUser}>Logout</a>
