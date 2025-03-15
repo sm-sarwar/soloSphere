@@ -1,12 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import JobCard from "../components/JobCard";
+import UseAuth from "../Hooks/UseAuth";
 
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [filter, setFilter] = useState("");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
+
+  const {user} = UseAuth()
 
   console.log(sort)
 
@@ -48,7 +51,7 @@ const AllJobs = () => {
         </div>
 
         <form>
-          <div className="flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
+          <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
             <input
               className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
               type="text"
@@ -63,7 +66,7 @@ const AllJobs = () => {
               Search
             </button>
           </div>
-        </form>
+        </form> 
         <div>
           <select
             name="category"
